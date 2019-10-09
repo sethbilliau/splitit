@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Method
+{% endblock %}
+
+{% block main %}
+    <!-- https://getbootstrap.com/docs/4.0/components/card/ -->
+    <div class="row">
+      <div class="col-sm-6">
+            <div class="upload">
+              <a href="/upload"><img class="card-img-top" src="static/upload.png" style="width:218px;height:218px;"></a>
+              <div class="card-body">
+                <h5 class="card-title">Upload</h5>
+                <p class="card-text">Upload a receipt.</p>
+                <a href="/upload" class="btn btn-primary">Upload</a>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+              <div class="form">
+              <a href="/manual"><img class="card-img-top" src="static/form.png" style="width:218px;height:218px;"></a>
+              <div class="card-body">
+                <h5 class="card-title">Form</h5>
+                <p class="card-text">Submit Form Manually.</p>
+                <a href="/manual" class="btn btn-primary">Form</a>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+    </div>
+
+
+
+
+{% endblock %}

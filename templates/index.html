@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <div class="card border-light-blue mb-3" style="container-fluid">
+      <div class="card-header"><b style='color: #628395'>Meal Details</b></div>
+      <div class="card-body">
+        <p class="card-text">
+    <form action="/" method="post">
+      <div class="row">
+        <div class="col-50">
+          <label for="pcount"><b style='color: #628395'>People Count (max 10)</b></label>
+        </div>
+        <div class="col-50" id="input_div">
+          <input type="number" name='count' id="count" step="1" value="2" min="2" max="10" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-50">
+          <label for="pcount"><b style='color: #628395'>SplitIt!</b></label>
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-primary active" id="input_div">
+              <input type="radio" name="how" value="evenly" id="evenly" checked=""> Split Evenly
+          </label>
+          <label class="btn btn-primary" id="input_div">
+              <input type="radio" name="how" value="bydish" id="bydish"> Split By Dish
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-50"></div>
+        <div class="indexsubmit">
+          <input type="submit" class="bg-primary" value="Submit">
+        </div>
+      </div>
+    </form>
+    </p>
+</div>
+  </div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+  </div>
+    <script>
+        document.querySelector('form').onsubmit = function (e){
+            e.preventDefault();
+            if (!document.querySelector('input[id=evenly]').checked && !document.querySelector('input[id=bydish]').checked)
+            {
+                alert("Please select how to SplitIt");
+            }
+            else
+            {
+                document.querySelector('form').submit();
+            }
+        };
+    </script>
+{% endblock %}
+

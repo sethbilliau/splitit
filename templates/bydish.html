@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    By Dish
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Person</th>
+                <th>Their Share</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- for each value of extra, add a penny to the person of interest's total -->
+            {% for i in range(extra) %}
+            <tr>
+                <td>{{ i + 1 }}</td>
+                <td>${{"{0:.2f}".format(totals[i] + 0.01)}} </td>
+            </tr>
+            {% endfor %}
+
+            <!-- for the rest of the people in count simply print their total -->
+            {% for i in range(count-extra) %}
+            <tr>
+                <td>{{ i + 1 + extra }}</td>
+                <td>${{"{0:.2f}".format(totals[i+extra])}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    <!-- Return to the Form -->
+    {% if venmo == None %}
+    <div class='row'>
+      <div class="col-75"></div>
+      <div class="col-25">
+        <a href="/manual"><button class="btn btn-primary" type="submit">Return to Form</button></a>
+      </div>
+    </div>
+    {% else %}
+    <div class='row'>
+      <div class="col-50"></div>
+      <div class="col-25">
+        <a href="https://venmo.com/{{venmo}}" target="_blank"><button class="btn btn-primary" type="submit">Go to Venmo</button></a>
+      </div>
+      <div class="col-25">
+        <a href="/manual"><button class="btn btn-primary" type="submit">Return to Form</button></a>
+      </div>
+    </div>
+    {% endif %}
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
+
+{% endblock %}
