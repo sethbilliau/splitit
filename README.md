@@ -3,7 +3,7 @@
 SplitIt! is a website designed to help groups who face the constant problem of splitting the bill accurately and quickly. Our website allows groups to easily assign specific dishes to specific people so that those who buy the most expensive dishes pay more than those who order something cheaper.
 
 ## Getting Started
-SplitIt lives on the CS50 IDE and primarily uses python (including the flask micro framework), html, JavaScript and SQL. To run SplitIt, change directory into the splitit folder, execute the command “flask run,” and open the link that appears in your terminal. SplitIt will begin on a login page. This page will allow you to login to the app. If you have already created login, please enter your credentials. If do not have an existing login, click register on the navigation bar in the top right.
+SplitIt lives on Heroku and primarily uses python (including the flask micro framework), html, JavaScript and SQL. To run SplitIt, change directory into the splitit folder, execute the command “flask run,” and open the link that appears in your terminal. SplitIt will begin on a login page. This page will allow you to login to the app. If you have already created login, please enter your credentials. If do not have an existing login, click register on the navigation bar in the top right.
 
 ![Login](/screenshots/login.png)
 <p align="center">
@@ -76,8 +76,6 @@ When splitting the bill by dish, there will be two sections of the manual form. 
 
 
 ## Authors
-
-
 * **Seth Billiau**
 * **Helen Huang**
 
